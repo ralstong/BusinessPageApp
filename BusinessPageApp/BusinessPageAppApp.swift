@@ -11,7 +11,7 @@ import SwiftUI
 struct BusinessPageAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BusinessPageView()
         }
     }
 }
