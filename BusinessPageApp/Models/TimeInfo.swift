@@ -5,7 +5,14 @@
 //  Created by Ralston Goes on 5/20/24.
 //
 
-struct TimeInfo {
-    let startTime: String
-    let endTime: String
+import Foundation
+
+final class TimeInfo {
+    var startTime: Date
+    var endTime: Date
+    
+    init(startTime: Date, endTime: Date) {
+        self.startTime = startTime
+        self.endTime = endTime
+    }
 }

@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC1116C82BFFD39F00B77C27 /* CollapsibleTimingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1116C72BFFD39F00B77C27 /* CollapsibleTimingView.swift */; };
+		AC1116CD2C00269400B77C27 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1116CC2C00269400B77C27 /* DateExtension.swift */; };
+		AC1116CF2C0027E200B77C27 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1116CE2C0027E200B77C27 /* StringExtension.swift */; };
+		AC1116D12C002D7D00B77C27 /* DateTimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1116D02C002D7D00B77C27 /* DateTimeHelper.swift */; };
+		AC1116D32C0032A000B77C27 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1116D22C0032A000B77C27 /* ColorExtension.swift */; };
+		AC1116D52C00387900B77C27 /* PursDisclosureGroupStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1116D42C00387900B77C27 /* PursDisclosureGroupStyle.swift */; };
+		AC1116D72C015A6200B77C27 /* BusinessOpenState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1116D62C015A6200B77C27 /* BusinessOpenState.swift */; };
+		AC1116E22C04BF7A00B77C27 /* HindSiliguri-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC1116E02C04BF7900B77C27 /* HindSiliguri-Regular.ttf */; };
+		AC1116E32C04BF7A00B77C27 /* HindSiliguri-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC1116E12C04BF7900B77C27 /* HindSiliguri-Bold.ttf */; };
+		AC1116E52C04BFA100B77C27 /* Chivo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC1116E42C04BFA100B77C27 /* Chivo-Light.ttf */; };
+		AC1116EB2C04CB6500B77C27 /* FiraSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC1116E92C04CB6500B77C27 /* FiraSans-Black.ttf */; };
+		AC73374F2C051C08005533CF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC73374E2C051C08005533CF /* Constants.swift */; };
+		AC7337512C052AD9005533CF /* TimingSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7337502C052AD9005533CF /* TimingSummaryView.swift */; };
+		AC7337532C052B38005533CF /* TimingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7337522C052B38005533CF /* TimingDetailView.swift */; };
 		ACB7DCAD2BFBFD72005C7936 /* BusinessPageAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB7DCAC2BFBFD72005C7936 /* BusinessPageAppApp.swift */; };
 		ACB7DCAF2BFBFD72005C7936 /* BusinessPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB7DCAE2BFBFD72005C7936 /* BusinessPageView.swift */; };
 		ACB7DCB12BFBFD73005C7936 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB7DCB02BFBFD73005C7936 /* Assets.xcassets */; };
@@ -23,6 +37,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC1116C72BFFD39F00B77C27 /* CollapsibleTimingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleTimingView.swift; sourceTree = "<group>"; };
+		AC1116CC2C00269400B77C27 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		AC1116CE2C0027E200B77C27 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		AC1116D02C002D7D00B77C27 /* DateTimeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeHelper.swift; sourceTree = "<group>"; };
+		AC1116D22C0032A000B77C27 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		AC1116D42C00387900B77C27 /* PursDisclosureGroupStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PursDisclosureGroupStyle.swift; sourceTree = "<group>"; };
+		AC1116D62C015A6200B77C27 /* BusinessOpenState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessOpenState.swift; sourceTree = "<group>"; };
+		AC1116E02C04BF7900B77C27 /* HindSiliguri-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HindSiliguri-Regular.ttf"; sourceTree = "<group>"; };
+		AC1116E12C04BF7900B77C27 /* HindSiliguri-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HindSiliguri-Bold.ttf"; sourceTree = "<group>"; };
+		AC1116E42C04BFA100B77C27 /* Chivo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Chivo-Light.ttf"; sourceTree = "<group>"; };
+		AC1116E62C04C03600B77C27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AC1116E92C04CB6500B77C27 /* FiraSans-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraSans-Black.ttf"; sourceTree = "<group>"; };
+		AC73374E2C051C08005533CF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AC7337502C052AD9005533CF /* TimingSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimingSummaryView.swift; sourceTree = "<group>"; };
+		AC7337522C052B38005533CF /* TimingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimingDetailView.swift; sourceTree = "<group>"; };
 		ACB7DCA92BFBFD72005C7936 /* BusinessPageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusinessPageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB7DCAC2BFBFD72005C7936 /* BusinessPageAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessPageAppApp.swift; sourceTree = "<group>"; };
 		ACB7DCAE2BFBFD72005C7936 /* BusinessPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessPageView.swift; sourceTree = "<group>"; };
@@ -50,6 +79,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC1116CB2C00267A00B77C27 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AC1116CC2C00269400B77C27 /* DateExtension.swift */,
+				AC1116CE2C0027E200B77C27 /* StringExtension.swift */,
+				AC1116D22C0032A000B77C27 /* ColorExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AC1116DD2C04BF3E00B77C27 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AC1116E42C04BFA100B77C27 /* Chivo-Light.ttf */,
+				AC1116E92C04CB6500B77C27 /* FiraSans-Black.ttf */,
+				AC1116E12C04BF7900B77C27 /* HindSiliguri-Bold.ttf */,
+				AC1116E02C04BF7900B77C27 /* HindSiliguri-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		ACB7DCA02BFBFD72005C7936 = {
 			isa = PBXGroup;
 			children = (
@@ -69,7 +119,10 @@
 		ACB7DCAB2BFBFD72005C7936 /* BusinessPageApp */ = {
 			isa = PBXGroup;
 			children = (
+				AC1116E62C04C03600B77C27 /* Info.plist */,
 				ACB7DCAC2BFBFD72005C7936 /* BusinessPageAppApp.swift */,
+				AC1116DD2C04BF3E00B77C27 /* Fonts */,
+				AC1116CB2C00267A00B77C27 /* Extensions */,
 				ACB7DCC22BFC0A0E005C7936 /* Helpers */,
 				ACB7DCBD2BFBFF88005C7936 /* APIs */,
 				ACB7DCBC2BFBFF6C005C7936 /* ViewModels */,
@@ -103,6 +156,10 @@
 			isa = PBXGroup;
 			children = (
 				ACB7DCAE2BFBFD72005C7936 /* BusinessPageView.swift */,
+				AC1116C72BFFD39F00B77C27 /* CollapsibleTimingView.swift */,
+				AC1116D42C00387900B77C27 /* PursDisclosureGroupStyle.swift */,
+				AC7337502C052AD9005533CF /* TimingSummaryView.swift */,
+				AC7337522C052B38005533CF /* TimingDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -130,6 +187,9 @@
 				ACB7DCC72BFC0C45005C7936 /* RequestHandler.swift */,
 				ACB7DCC52BFC0B89005C7936 /* APIError.swift */,
 				ACB7DCCF2BFC4B0C005C7936 /* ViewState.swift */,
+				AC1116D02C002D7D00B77C27 /* DateTimeHelper.swift */,
+				AC1116D62C015A6200B77C27 /* BusinessOpenState.swift */,
+				AC73374E2C051C08005533CF /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -193,7 +253,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACB7DCB42BFBFD73005C7936 /* Preview Assets.xcassets in Resources */,
+				AC1116E22C04BF7A00B77C27 /* HindSiliguri-Regular.ttf in Resources */,
+				AC1116E32C04BF7A00B77C27 /* HindSiliguri-Bold.ttf in Resources */,
 				ACB7DCB12BFBFD73005C7936 /* Assets.xcassets in Resources */,
+				AC1116E52C04BFA100B77C27 /* Chivo-Light.ttf in Resources */,
+				AC1116EB2C04CB6500B77C27 /* FiraSans-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,16 +269,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACB7DCC82BFC0C45005C7936 /* RequestHandler.swift in Sources */,
+				AC73374F2C051C08005533CF /* Constants.swift in Sources */,
+				AC1116CD2C00269400B77C27 /* DateExtension.swift in Sources */,
+				AC1116D72C015A6200B77C27 /* BusinessOpenState.swift in Sources */,
+				AC1116CF2C0027E200B77C27 /* StringExtension.swift in Sources */,
 				ACB7DCAF2BFBFD72005C7936 /* BusinessPageView.swift in Sources */,
+				AC1116D52C00387900B77C27 /* PursDisclosureGroupStyle.swift in Sources */,
 				ACB7DCCE2BFC4A67005C7936 /* BusinessInfoViewModel.swift in Sources */,
 				ACB7DCD02BFC4B0C005C7936 /* ViewState.swift in Sources */,
+				AC1116D32C0032A000B77C27 /* ColorExtension.swift in Sources */,
 				ACB7DCAD2BFBFD72005C7936 /* BusinessPageAppApp.swift in Sources */,
 				ACB7DCC42BFC0AA5005C7936 /* DataParser.swift in Sources */,
+				AC7337532C052B38005533CF /* TimingDetailView.swift in Sources */,
 				ACB7DCC12BFC09C8005C7936 /* BusinessInfoAPI.swift in Sources */,
 				ACB7DCCC2BFC48B5005C7936 /* TimeInfo.swift in Sources */,
 				ACB7DCBF2BFC0000005C7936 /* BusinessInfo.swift in Sources */,
+				AC1116D12C002D7D00B77C27 /* DateTimeHelper.swift in Sources */,
 				ACB7DCC62BFC0B89005C7936 /* APIError.swift in Sources */,
 				ACB7DCCA2BFC489C005C7936 /* HoursInfo.swift in Sources */,
+				AC1116C82BFFD39F00B77C27 /* CollapsibleTimingView.swift in Sources */,
+				AC7337512C052AD9005533CF /* TimingSummaryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +425,7 @@
 				DEVELOPMENT_TEAM = 63262WWM7D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BusinessPageApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -380,6 +455,7 @@
 				DEVELOPMENT_TEAM = 63262WWM7D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BusinessPageApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
