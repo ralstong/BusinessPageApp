@@ -8,6 +8,10 @@
 import Foundation
 
 struct RequestHandler {
+    /// Fetches Data from urlString
+    /// - Parameters:
+    ///   - urlString: url String
+    /// - Returns: Data fetched from the url, otherwise throws APIError
     static func fetchData(from urlString: String) async throws -> Data {
         guard let url = URL(string: urlString) else {
             throw APIError.badURL

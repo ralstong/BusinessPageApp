@@ -6,3 +6,19 @@
 //
 
 import Foundation
+import SwiftUI
+
+struct CollapsibleTimingView: View {
+    
+    @ObservedObject var viewModel: BusinessInfoViewModel
+    
+    var body: some View {
+        DisclosureGroup {
+            TimingDetailView(viewModel: viewModel)
+        } label: {
+            TimingSummaryView(viewModel: viewModel)
+        }
+        .disclosureGroupStyle(PursDisclosureGroupStyle())
+        .padding(17.0)
+    }
+}

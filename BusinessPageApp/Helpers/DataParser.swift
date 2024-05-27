@@ -8,6 +8,10 @@
 import Foundation
 
 struct DataParser {
+    /// Parses Data for a provided generic type
+    /// - Parameters:
+    ///   - data: Data
+    /// - Returns: Provided type parsed from the data, otherwise throws APIError
     static func parse<T: Decodable>(from data: Data) throws -> T {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase

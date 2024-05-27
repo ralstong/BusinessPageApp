@@ -19,10 +19,8 @@ struct PursDisclosureGroupStyle: DisclosureGroupStyle {
                     configuration.label
                     Spacer()
                     withAnimation {
-                        Image(systemName: configuration.isExpanded ? "chevron.up" : "chevron.right")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 12.0, height: 12.0)
+                        Image(systemName: configuration.isExpanded ? PursImage.chevronUp : PursImage.chevronRight)
+                            .font(.system(size: 12.0, weight: .bold))
                             .foregroundStyle(Color.pursGrey)
                     }
                 }

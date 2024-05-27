@@ -17,22 +17,56 @@ struct BusinessPageView: View {
             case .loading:
                 ProgressView()
             case .error:
-                Color.red
-            case .data(let info):
-                    VStack {
-                        Text(info.locationName)
-                            .font(.custom("Fira Sans", size: 54.0))
-                            .bold()
-                            .foregroundStyle(.white)
-                        Spacer()
-                    }
-                    .padding(23.0)
-                    .background {
-                        Image("purs_img", bundle: nil)
-                            .resizable()
-                            .scaledToFill()
-                            .ignoresSafeArea(edges: .vertical)
-                    }
+                ZStack {
+                    Color.black
+                    Text(PursText.errorText)
+                }
+                .ignoresSafeArea(.all)
+            case .loaded:
+                VStack(alignment: .leading) {
+                    Text(viewModel.locationText)
+                        .font(.custom(PursFont.firaSansBlack, size: 54.0))
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 23.0)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .background(.linearGradient(colors: [.black, .black.opacity(0.0)],
+                                                        startPoint: .top,
+                                                        endPoint: .bottom))
+                    
+                    CollapsibleTimingView(viewModel: viewModel)
+                        .background(Color(hex: "D9D9D9").opacity(0.6))
+                        .clipShape(RoundedRectangle(cornerRadius: 8.0))
+                        .shadow(color: .black.opacity(0.25), radius: 10.2, x: 0, y: 4.0)
+                        .padding(.horizontal, 23.0)
+                    
+                    Spacer()
+                    
+                    Button(action: {}, label: {
+                        VStack(alignment: .center) {
+                            Image(systemName: PursImage.chevronUp)
+                                .font(.system(size: 12.0, weight: .bold))
+                                .foregroundStyle(.white.opacity(0.5))
+                                .padding(6.0)
+                            Image(systemName: PursImage.chevronUp)
+                                .font(.system(size: 12.0, weight: .bold))
+                                .foregroundStyle(.white)
+                            Text(PursText.viewMenu)
+                                .font(.custom(PursFont.hindSiliguriRegular, size: 24.0))
+                                .foregroundStyle(.white)
+                                .padding(6.0)
+                        }
+                    })
+                    .frame(maxWidth: .infinity)
+                    .background(.linearGradient(colors: [.black.opacity(0.0), .black],
+                                                startPoint: .top, 
+                                                endPoint: .bottom))
+                }
+                .background {
+                    Image(PursImage.background, bundle: nil)
+                        .resizable()
+                        .scaledToFill()
+                        .ignoresSafeArea(edges: .vertical)
+                }
             }
         }
         .task {
