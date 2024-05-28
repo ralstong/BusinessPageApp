@@ -13,7 +13,7 @@ struct CollapsibleTimingView: View {
     @ObservedObject var viewModel: BusinessInfoViewModel
     
     var body: some View {
-        DisclosureGroup {
+        DisclosureGroup(isExpanded: $viewModel.detailsExpanded) {
             TimingDetailView(viewModel: viewModel)
         } label: {
             TimingSummaryView(viewModel: viewModel)

@@ -29,6 +29,7 @@
 		AC73376B2C05FF3A005533CF /* DateTimeHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC73376A2C05FF3A005533CF /* DateTimeHelperTests.swift */; };
 		AC73376D2C060A04005533CF /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC73376C2C060A04005533CF /* StringExtensionTests.swift */; };
 		AC73376F2C060E89005533CF /* DateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC73376E2C060E89005533CF /* DateExtensionTests.swift */; };
+		AC7337712C0677FE005533CF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AC7337702C0677FE005533CF /* README.md */; };
 		ACB7DCAD2BFBFD72005C7936 /* BusinessPageAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB7DCAC2BFBFD72005C7936 /* BusinessPageAppApp.swift */; };
 		ACB7DCAF2BFBFD72005C7936 /* BusinessPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB7DCAE2BFBFD72005C7936 /* BusinessPageView.swift */; };
 		ACB7DCB12BFBFD73005C7936 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB7DCB02BFBFD73005C7936 /* Assets.xcassets */; };
@@ -79,6 +80,7 @@
 		AC73376A2C05FF3A005533CF /* DateTimeHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeHelperTests.swift; sourceTree = "<group>"; };
 		AC73376C2C060A04005533CF /* StringExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
 		AC73376E2C060E89005533CF /* DateExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensionTests.swift; sourceTree = "<group>"; };
+		AC7337702C0677FE005533CF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		ACB7DCA92BFBFD72005C7936 /* BusinessPageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusinessPageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB7DCAC2BFBFD72005C7936 /* BusinessPageAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessPageAppApp.swift; sourceTree = "<group>"; };
 		ACB7DCAE2BFBFD72005C7936 /* BusinessPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessPageView.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		ACB7DCA02BFBFD72005C7936 = {
 			isa = PBXGroup;
 			children = (
+				AC7337702C0677FE005533CF /* README.md */,
 				ACB7DCAB2BFBFD72005C7936 /* BusinessPageApp */,
 				AC7337592C0535C4005533CF /* BusinessPageAppTests */,
 				ACB7DCAA2BFBFD72005C7936 /* Products */,
@@ -336,6 +339,7 @@
 				ACB7DCB42BFBFD73005C7936 /* Preview Assets.xcassets in Resources */,
 				AC1116E22C04BF7A00B77C27 /* HindSiliguri-Regular.ttf in Resources */,
 				AC1116E32C04BF7A00B77C27 /* HindSiliguri-Bold.ttf in Resources */,
+				AC7337712C0677FE005533CF /* README.md in Resources */,
 				ACB7DCB12BFBFD73005C7936 /* Assets.xcassets in Resources */,
 				AC1116E52C04BFA100B77C27 /* Chivo-Light.ttf in Resources */,
 				AC1116EB2C04CB6500B77C27 /* FiraSans-Black.ttf in Resources */,

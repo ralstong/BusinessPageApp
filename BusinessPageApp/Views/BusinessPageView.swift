@@ -20,6 +20,7 @@ struct BusinessPageView: View {
                 ZStack {
                     Color.black
                     Text(PursText.errorText)
+                        .foregroundStyle(.white)
                 }
                 .ignoresSafeArea(.all)
             case .loaded:
@@ -41,25 +42,27 @@ struct BusinessPageView: View {
                     
                     Spacer()
                     
-                    Button(action: {}, label: {
-                        VStack(alignment: .center) {
-                            Image(systemName: PursImage.chevronUp)
-                                .font(.system(size: 12.0, weight: .bold))
-                                .foregroundStyle(.white.opacity(0.5))
-                                .padding(6.0)
-                            Image(systemName: PursImage.chevronUp)
-                                .font(.system(size: 12.0, weight: .bold))
-                                .foregroundStyle(.white)
-                            Text(PursText.viewMenu)
-                                .font(.custom(PursFont.hindSiliguriRegular, size: 24.0))
-                                .foregroundStyle(.white)
-                                .padding(6.0)
-                        }
-                    })
-                    .frame(maxWidth: .infinity)
-                    .background(.linearGradient(colors: [.black.opacity(0.0), .black],
-                                                startPoint: .top, 
-                                                endPoint: .bottom))
+                    if (!viewModel.detailsExpanded) {
+                        Button(action: {}, label: {
+                            VStack(alignment: .center) {
+                                Image(systemName: PursImage.chevronUp)
+                                    .font(.system(size: 12.0, weight: .bold))
+                                    .foregroundStyle(.white.opacity(0.5))
+                                    .padding(6.0)
+                                Image(systemName: PursImage.chevronUp)
+                                    .font(.system(size: 12.0, weight: .bold))
+                                    .foregroundStyle(.white)
+                                Text(PursText.viewMenu)
+                                    .font(.custom(PursFont.hindSiliguriRegular, size: 24.0))
+                                    .foregroundStyle(.white)
+                                    .padding(6.0)
+                            }
+                        })
+                        .frame(maxWidth: .infinity)
+                        .background(.linearGradient(colors: [.black.opacity(0.0), .black],
+                                                    startPoint: .top,
+                                                    endPoint: .bottom))
+                    }
                 }
                 .background {
                     Image(PursImage.background, bundle: nil)

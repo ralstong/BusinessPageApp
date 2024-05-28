@@ -10,22 +10,25 @@ import Foundation
 final class BusinessInfoViewModel: ObservableObject {
     
     @Published var state: ViewState
-    @Published var weeklyTimes = [String: [TimeInfo]]()
+    @Published var weeklyTimes: [String: [TimeInfo]]
     @Published var locationText: String
     @Published var currentOpenText: String
     @Published var openIndicatorState: OpenIndicatorState
+    @Published var detailsExpanded: Bool
     var apiService: BusinessInfoService
     
     var daysOfTheWeek: [String] {
         DateTimeHelper.daysOfTheWeek
     }
     
-    init(state: ViewState = .loading, apiService: BusinessInfoService = BusinessInfoAPI()) {
-        self.state = state
+    init(apiService: BusinessInfoService = BusinessInfoAPI()) {
+        self.state = .loading
+        self.weeklyTimes = [:]
         self.locationText = ""
         self.currentOpenText = ""
         self.openIndicatorState = .closed
         self.apiService = apiService
+        self.detailsExpanded = false
     }
     
     func loadInfo() async {
