@@ -14,7 +14,7 @@ struct BusinessInfo {
 
 extension BusinessInfo: Decodable {
     
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case locationName
         case hours
     }
@@ -26,12 +26,17 @@ extension BusinessInfo: Decodable {
         hoursByDay = BusinessInfo.configureHoursByDay(from: allHoursInfo)
     }
     
+    /// Returns an organized dictionary from the default hours info array containing key as the day of the week and value as an array of TimeInfo objects containing the start and end times
+    /// - Parameters:
+    ///   - hoursInfo: HoursInfo Array containing the weekday and timing information
+    ///   - currentDate: The current date. A default Date() instance is provided by default
+    /// - Returns: The structured dictionary containing key as day of the week string and value as TimeInfo array
     private static func configureHoursByDay(from hoursInfo: [HoursInfo], currentDate: Date = Date()) -> [String: [TimeInfo]] {
         var dayTimeInfo = [String: [TimeInfo]]()
         for info in hoursInfo {
             guard let day = info.dayOfWeek.convertToFullWeekday(),
                   let startTime = currentDate.dateFrom(weekday: day, time: info.startLocalTime),
-                  let endTime = currentDate.dateFrom(weekday: day, time: info.endLocalTime) else {
+                  let endTime = startTime.nextDate(to: info.endLocalTime) else {
                 print("Error creating TimeInfo object")
                 continue
             }

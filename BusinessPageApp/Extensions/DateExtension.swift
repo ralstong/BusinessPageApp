@@ -9,6 +9,11 @@ import Foundation
 
 extension Date {
     
+    /// Returns a simplified string representation of the time
+    /// For eg. 8AM, 12:30PM, 8am, 12:30pm, etc.
+    /// - Parameters:
+    ///   - isUppercased: determines if the am or pm symbol should be uppercased
+    /// - Returns: The simplified time string
     func simplifyTimeFromHMS(isUppercased: Bool = false) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = Calendar.current.component(.minute, from: self) == 0 ? "ha" : "h:ma"
@@ -17,39 +22,13 @@ extension Date {
         return dateFormatter.string(from: self)
     }
     
-    func dateFromTimeString() -> Date? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm:ss"
-        let str = dateFormatter.string(from: self)
-        return dateFormatter.date(from: str)
-    }
-    
-    func timeString() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm:ss"
-        return dateFormatter.string(from: self)
-    }
-    
+    /// Returns the current day of the week. For eg. Sunday, Monday, etc.
+    /// - Returns: The day of the week as a string
     func weekday() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE"
-        return dateFormatter.string(from: Date())
+        return dateFormatter.string(from: self)
     }
-    
-    func convertToWeekdayFullForm(from shortForm: String) -> String? {
-        let short = shortForm.uppercased()
-        let inputDF = DateFormatter()
-        
-        inputDF.dateFormat = "EEE"
-        guard let inputDate = inputDF.date(from: short) else {
-            return nil
-        }
-        return inputDate.weekday()
-    }
-}
-
-
-extension Date {
     
     /// Returns the date within the current week for the given weekday and time.
     /// - Parameters:
@@ -91,16 +70,62 @@ extension Date {
         }
         
         // Calculate the target date for the given weekday and time
-        let daysToAdd = (weekdayIndex + 1) % 7 // Adjust for Monday as the first day
+        var daysToAdd = (weekdayIndex + 1) == 8 ? 1 : weekdayIndex + 1
+        if is24Hr { daysToAdd = (weekdayIndex + 1) == 8 ? 1 : weekdayIndex + 1 }
+        
         var components = DateComponents()
-        components.weekday = daysToAdd + (is24Hr ? 1 : 0)
+        components.weekday = daysToAdd
         components.hour = timeComponents.hour
         components.minute = timeComponents.minute
         components.second = timeComponents.second
         
         // Calculate the final date
         let targetDate = calendar.nextDate(after: startOfWeek, matching: components, matchingPolicy: .nextTime)
-        
-        return targetDate ?? calendar.date(bySettingHour: timeComponents.hour ?? 0, minute: timeComponents.minute ?? 0, second: timeComponents.second ?? 0, of: self)
+        return targetDate ?? calendar.date(bySettingHour: timeComponents.hour ?? 0,
+                                           minute: timeComponents.minute ?? 0,
+                                           second: timeComponents.second ?? 0, 
+                                           of: self)
     }
+    
+    /// Returns the subsequent date to meet the given time string from the current date
+    /// - Parameters:
+    ///   - time: The time string in the format "HH:mm:ss".
+    /// - Returns: The date object within the current week for the given weekday and time.
+    func nextDate(to time: String) -> Date? {
+        let calendar = Calendar.current
+        let timeAt24 = "24:00:00"
+        let timeAt0 = "00:00:00"
+        var time = time
+        
+        // if 24:00:00, then set to 00:00:00 for format validity
+        if time == timeAt24 {
+            time = timeAt0
+        }
+        guard let timeDate = time.dateFromHMSTime() else {
+            return nil
+        }
+        
+        // extract the hour, minute, and second components from the timeDate
+        let timeComponents = calendar.dateComponents([.hour, .minute, .second], from: timeDate)
+        
+        // extract the year, month, and day components from self Date
+        var dateComponents = calendar.dateComponents([.year, .month, .day], from: self)
+        
+        // set the hour, minute, and second components to the dateComponents
+        dateComponents.hour = timeComponents.hour
+        dateComponents.minute = timeComponents.minute
+        dateComponents.second = timeComponents.second
+        
+        // create a new Date object with the combined date and time components
+        guard let resultDate = calendar.date(from: dateComponents) else {
+            return nil
+        }
+        
+        // if the created date is earlier than or equal to the given date's time, add 1 day
+        if resultDate <= self {
+            return calendar.date(byAdding: .day, value: 1, to: resultDate)
+        }
+        return resultDate
+    }
+
 }

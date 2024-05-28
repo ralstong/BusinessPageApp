@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BusinessInfoAPI: BusinessInfoService {
+final class BusinessInfoAPI: BusinessInfoService {
     
     static let locationURL = "https://purs-demo-bucket-test.s3.us-west-2.amazonaws.com/location.json"
     

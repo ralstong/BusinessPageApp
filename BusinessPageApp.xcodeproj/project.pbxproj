@@ -26,6 +26,9 @@
 		AC7337642C053772005533CF /* BusinessInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7337632C053772005533CF /* BusinessInfoService.swift */; };
 		AC7337672C0537D3005533CF /* MockBusinessInfoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7337662C0537D3005533CF /* MockBusinessInfoAPI.swift */; };
 		AC7337692C053867005533CF /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7337682C053867005533CF /* MockData.swift */; };
+		AC73376B2C05FF3A005533CF /* DateTimeHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC73376A2C05FF3A005533CF /* DateTimeHelperTests.swift */; };
+		AC73376D2C060A04005533CF /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC73376C2C060A04005533CF /* StringExtensionTests.swift */; };
+		AC73376F2C060E89005533CF /* DateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC73376E2C060E89005533CF /* DateExtensionTests.swift */; };
 		ACB7DCAD2BFBFD72005C7936 /* BusinessPageAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB7DCAC2BFBFD72005C7936 /* BusinessPageAppApp.swift */; };
 		ACB7DCAF2BFBFD72005C7936 /* BusinessPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB7DCAE2BFBFD72005C7936 /* BusinessPageView.swift */; };
 		ACB7DCB12BFBFD73005C7936 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB7DCB02BFBFD73005C7936 /* Assets.xcassets */; };
@@ -73,6 +76,9 @@
 		AC7337632C053772005533CF /* BusinessInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessInfoService.swift; sourceTree = "<group>"; };
 		AC7337662C0537D3005533CF /* MockBusinessInfoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBusinessInfoAPI.swift; sourceTree = "<group>"; };
 		AC7337682C053867005533CF /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		AC73376A2C05FF3A005533CF /* DateTimeHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeHelperTests.swift; sourceTree = "<group>"; };
+		AC73376C2C060A04005533CF /* StringExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
+		AC73376E2C060E89005533CF /* DateExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensionTests.swift; sourceTree = "<group>"; };
 		ACB7DCA92BFBFD72005C7936 /* BusinessPageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusinessPageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB7DCAC2BFBFD72005C7936 /* BusinessPageAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessPageAppApp.swift; sourceTree = "<group>"; };
 		ACB7DCAE2BFBFD72005C7936 /* BusinessPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessPageView.swift; sourceTree = "<group>"; };
@@ -135,6 +141,9 @@
 				AC7337662C0537D3005533CF /* MockBusinessInfoAPI.swift */,
 				AC7337682C053867005533CF /* MockData.swift */,
 				AC7337612C0535E0005533CF /* BusinessInfoViewModelTests.swift */,
+				AC73376A2C05FF3A005533CF /* DateTimeHelperTests.swift */,
+				AC73376C2C060A04005533CF /* StringExtensionTests.swift */,
+				AC73376E2C060E89005533CF /* DateExtensionTests.swift */,
 			);
 			path = BusinessPageAppTests;
 			sourceTree = "<group>";
@@ -340,7 +349,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC73376B2C05FF3A005533CF /* DateTimeHelperTests.swift in Sources */,
 				AC7337622C0535E0005533CF /* BusinessInfoViewModelTests.swift in Sources */,
+				AC73376D2C060A04005533CF /* StringExtensionTests.swift in Sources */,
+				AC73376F2C060E89005533CF /* DateExtensionTests.swift in Sources */,
 				AC7337692C053867005533CF /* MockData.swift in Sources */,
 				AC7337672C0537D3005533CF /* MockBusinessInfoAPI.swift in Sources */,
 				AC73375B2C0535C4005533CF /* BusinessPageAppTests.swift in Sources */,

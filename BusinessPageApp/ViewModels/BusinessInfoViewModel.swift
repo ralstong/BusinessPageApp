@@ -63,7 +63,7 @@ final class BusinessInfoViewModel: ObservableObject {
     
     func setOpenIndicatorState(currentDate: Date = Date(), timeInfo: [TimeInfo]? = nil) -> OpenIndicatorState {
         let weekday = currentDate.weekday()
-        var timeInfo = timeInfo == nil ? weeklyTimes[weekday] : timeInfo
+        let timeInfo = timeInfo == nil ? weeklyTimes[weekday] : timeInfo
         guard let timeInfo else {
             return .closed
         }
@@ -87,7 +87,7 @@ final class BusinessInfoViewModel: ObservableObject {
             guard index + 1 < timeInfo.count else {
                 return res
             }
-            res += ", reopens at \(timeInfo[index+1].endTime.simplifyTimeFromHMS())"
+            res += ", reopens at \(timeInfo[index+1].startTime.simplifyTimeFromHMS())"
             return res
         }
         

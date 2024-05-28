@@ -16,6 +16,6 @@ class MockBusinessInfoAPI: BusinessInfoService {
             throw APIError.unknownError
         }
         return BusinessInfo(locationName: "Some Location",
-                            hoursByDay: MockData.weekdayTimingsInfo)
+                            hoursByDay: MockData.weekdayTimingsInfo())
     }
 }

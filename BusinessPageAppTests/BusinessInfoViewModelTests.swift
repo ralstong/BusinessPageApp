@@ -13,12 +13,14 @@ final class BusinessInfoViewModelTests: XCTestCase {
     var viewModel: BusinessInfoViewModel!
     var mockService = MockBusinessInfoAPI()
     
-    override func setUpWithError() throws {
+    override func setUp() {
+        super.setUp()
         viewModel = BusinessInfoViewModel(apiService: mockService)
     }
     
-    override func tearDownWithError() throws {
+    override func tearDown() {
         viewModel = nil
+        super.tearDown()
     }
     
     func test_initialViewModelSetup() {
@@ -29,7 +31,7 @@ final class BusinessInfoViewModelTests: XCTestCase {
     }
     
     // MARK: test loadInfo method
-    func test_loadInfoFailure() async {
+    func test_loadInfo_failure() async {
         let expectation = expectation(description: "Loading info fails")
         mockService.isFailure = true
         await viewModel.loadInfo()
@@ -40,7 +42,7 @@ final class BusinessInfoViewModelTests: XCTestCase {
         await fulfillment(of: [expectation], timeout: 3)
     }
     
-    func test_loadInfoSuccessful() async {
+    func test_loadInfo_success() async {
         let expectation = expectation(description: "Loading info succeeds")
         await viewModel.loadInfo()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
@@ -51,7 +53,7 @@ final class BusinessInfoViewModelTests: XCTestCase {
     }
     
     // MARK: test formatTimeRangeText method
-    func test_formatTimeRangeText_Open24Hours() {
+    func test_formatTimeRangeText_open24Hours() {
         let calendar = Calendar.current
         guard let start = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: Date()),
               let end = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: start.addingTimeInterval(24 * 60 * 60)) else {
@@ -63,7 +65,7 @@ final class BusinessInfoViewModelTests: XCTestCase {
         XCTAssertEqual(result, "Open 24 hours")
     }
     
-    func test_formatTimeRangeText_Within24Hours() {
+    func test_formatTimeRangeText_within24Hours() {
         let calendar = Calendar.current
         guard let start = calendar.date(bySettingHour: 9, minute: 0, second: 0, of: Date()),
               let end = calendar.date(bySettingHour: 17, minute: 0, second: 0, of: start) else {
@@ -238,15 +240,9 @@ final class BusinessInfoViewModelTests: XCTestCase {
             XCTFail("Failed to set date")
             return
         }
-        let weekdaySymbols = Calendar.current.weekdaySymbols
-        guard let startIndex = weekdaySymbols.firstIndex(of: testDate.weekday().capitalized) else {
-            XCTFail("Failed to get weekday start index")
-            return
-        }
-        let index = (startIndex + 2) % 7
-        let nextWeekDay = weekdaySymbols[index]
+        let nextOpenDay = startTime1.weekday()
         let timeInfo = [TimeInfo(startTime: startTime1, endTime: endTime1)]
-        let text = viewModel.setCurrentOpenText(currentDate: testDate, weeklyTimeInfo: [nextWeekDay: timeInfo])
+        let text = viewModel.setCurrentOpenText(currentDate: testDate, weeklyTimeInfo: [nextOpenDay: timeInfo])
         XCTAssertTrue(text.hasPrefix("Opens"))
         XCTAssertFalse(text.hasPrefix("Opens again at"))
     }
