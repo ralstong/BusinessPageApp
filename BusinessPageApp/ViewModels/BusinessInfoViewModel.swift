@@ -58,7 +58,7 @@ final class BusinessInfoViewModel: ObservableObject {
     }
     
     func formatTimeRangeText(from start: Date, to end: Date, hasTrailingCharacter: Bool = false) -> String {
-        guard let diff = Calendar.current.dateComponents([.hour], from: start, to: end).hour, diff < 24 else { return "Open 24 hours" }
+        guard let diff = Calendar.current.dateComponents([.hour], from: start, to: end).hour, diff < 24 else { return "Open 24hrs" }
         let startTime = start.simplifyTimeFromHMS(isUppercased: true)
         let endTime = end.simplifyTimeFromHMS(isUppercased: true)
         return startTime + "-" + endTime + (hasTrailingCharacter ? "," : "")

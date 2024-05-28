@@ -16,6 +16,7 @@
 - The time string will always be in range "00:00:00" through "24:00:00".
 - The hours and minutes will be taken into account, but we can ignore the seconds as accuracy in seconds may not be necessary for store timings.
 - The view menu button is not functional.
+- If a single day has more than 1 open timing block, then the "open until ... reopens at ... " text will be shown.
 
 ## Process and decisions:
 - The app is built using SwifUI and utilized the mock up UI and criteria from the FIGMA link for iOS.
@@ -25,6 +26,13 @@
 - Used a custom DisclosureGroupStyle to account for the divider and also to customize the chevron as per the FIGMA specs.
 - Extended String, Date and Color types to provide some added functionality for ease of use.
 - Added unit tests to test the view model and the date time helper, as well as the extended functionality included for Date and String.
+- The indicator color will update based on the provided logic for green (if open), yellow (if closing within 1 hr) and red (if closed).
+- The open until text will also update as per the provided logic.
+- Hours of operation edge cases handled:
+  - All time segments shown within one day's block
+  - Late night time supported, eg. 6pm-2am
+  - "Open 24hrs" text is shown if time provided is "00:00:00" to "24:00:00"
+  - Overlapping and continuous times will be combined, for eg. "12:00:00"-"15:00:00" and "15:00:00"-"18:00:00" will be combined to "12:00:00-18:00:00"
 
 ## Pending improvements (TODOs):
 - Add the capability to fetch and cache the background image if needed. If the image changes, we can update the cache with the new image.
