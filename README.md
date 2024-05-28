@@ -44,3 +44,12 @@
 
 ## Build tools:
 Built using Xcode 15.4 and iOS 17.5
+
+## Screenshots
+
+<img src="https://github.com/ralstong/BusinessPageApp/assets/20563830/0afb51f2-b8b0-4d6b-9e2e-5521e4772105" width="300" height="650" />
+
+<img src="https://github.com/ralstong/BusinessPageApp/assets/20563830/f3a0f3a6-ff25-4141-9147-cb1f7e147094" width="300" height="650" />
+
+
+
