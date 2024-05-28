@@ -21,6 +21,11 @@
 		AC73374F2C051C08005533CF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC73374E2C051C08005533CF /* Constants.swift */; };
 		AC7337512C052AD9005533CF /* TimingSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7337502C052AD9005533CF /* TimingSummaryView.swift */; };
 		AC7337532C052B38005533CF /* TimingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7337522C052B38005533CF /* TimingDetailView.swift */; };
+		AC73375B2C0535C4005533CF /* BusinessPageAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC73375A2C0535C4005533CF /* BusinessPageAppTests.swift */; };
+		AC7337622C0535E0005533CF /* BusinessInfoViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7337612C0535E0005533CF /* BusinessInfoViewModelTests.swift */; };
+		AC7337642C053772005533CF /* BusinessInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7337632C053772005533CF /* BusinessInfoService.swift */; };
+		AC7337672C0537D3005533CF /* MockBusinessInfoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7337662C0537D3005533CF /* MockBusinessInfoAPI.swift */; };
+		AC7337692C053867005533CF /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7337682C053867005533CF /* MockData.swift */; };
 		ACB7DCAD2BFBFD72005C7936 /* BusinessPageAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB7DCAC2BFBFD72005C7936 /* BusinessPageAppApp.swift */; };
 		ACB7DCAF2BFBFD72005C7936 /* BusinessPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB7DCAE2BFBFD72005C7936 /* BusinessPageView.swift */; };
 		ACB7DCB12BFBFD73005C7936 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB7DCB02BFBFD73005C7936 /* Assets.xcassets */; };
@@ -35,6 +40,16 @@
 		ACB7DCCE2BFC4A67005C7936 /* BusinessInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB7DCCD2BFC4A67005C7936 /* BusinessInfoViewModel.swift */; };
 		ACB7DCD02BFC4B0C005C7936 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB7DCCF2BFC4B0C005C7936 /* ViewState.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AC73375C2C0535C4005533CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ACB7DCA12BFBFD72005C7936 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ACB7DCA82BFBFD72005C7936;
+			remoteInfo = BusinessPageApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		AC1116C72BFFD39F00B77C27 /* CollapsibleTimingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleTimingView.swift; sourceTree = "<group>"; };
@@ -52,6 +67,12 @@
 		AC73374E2C051C08005533CF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC7337502C052AD9005533CF /* TimingSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimingSummaryView.swift; sourceTree = "<group>"; };
 		AC7337522C052B38005533CF /* TimingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimingDetailView.swift; sourceTree = "<group>"; };
+		AC7337582C0535C4005533CF /* BusinessPageAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusinessPageAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC73375A2C0535C4005533CF /* BusinessPageAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessPageAppTests.swift; sourceTree = "<group>"; };
+		AC7337612C0535E0005533CF /* BusinessInfoViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessInfoViewModelTests.swift; sourceTree = "<group>"; };
+		AC7337632C053772005533CF /* BusinessInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessInfoService.swift; sourceTree = "<group>"; };
+		AC7337662C0537D3005533CF /* MockBusinessInfoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBusinessInfoAPI.swift; sourceTree = "<group>"; };
+		AC7337682C053867005533CF /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		ACB7DCA92BFBFD72005C7936 /* BusinessPageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusinessPageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB7DCAC2BFBFD72005C7936 /* BusinessPageAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessPageAppApp.swift; sourceTree = "<group>"; };
 		ACB7DCAE2BFBFD72005C7936 /* BusinessPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessPageView.swift; sourceTree = "<group>"; };
@@ -69,6 +90,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AC7337552C0535C4005533CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ACB7DCA62BFBFD72005C7936 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -100,10 +128,22 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		AC7337592C0535C4005533CF /* BusinessPageAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				AC73375A2C0535C4005533CF /* BusinessPageAppTests.swift */,
+				AC7337662C0537D3005533CF /* MockBusinessInfoAPI.swift */,
+				AC7337682C053867005533CF /* MockData.swift */,
+				AC7337612C0535E0005533CF /* BusinessInfoViewModelTests.swift */,
+			);
+			path = BusinessPageAppTests;
+			sourceTree = "<group>";
+		};
 		ACB7DCA02BFBFD72005C7936 = {
 			isa = PBXGroup;
 			children = (
 				ACB7DCAB2BFBFD72005C7936 /* BusinessPageApp */,
+				AC7337592C0535C4005533CF /* BusinessPageAppTests */,
 				ACB7DCAA2BFBFD72005C7936 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				ACB7DCA92BFBFD72005C7936 /* BusinessPageApp.app */,
+				AC7337582C0535C4005533CF /* BusinessPageAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -121,13 +162,13 @@
 			children = (
 				AC1116E62C04C03600B77C27 /* Info.plist */,
 				ACB7DCAC2BFBFD72005C7936 /* BusinessPageAppApp.swift */,
-				AC1116DD2C04BF3E00B77C27 /* Fonts */,
-				AC1116CB2C00267A00B77C27 /* Extensions */,
-				ACB7DCC22BFC0A0E005C7936 /* Helpers */,
 				ACB7DCBD2BFBFF88005C7936 /* APIs */,
+				ACB7DCBA2BFBFF51005C7936 /* Models */,
 				ACB7DCBC2BFBFF6C005C7936 /* ViewModels */,
 				ACB7DCBB2BFBFF67005C7936 /* Views */,
-				ACB7DCBA2BFBFF51005C7936 /* Models */,
+				ACB7DCC22BFC0A0E005C7936 /* Helpers */,
+				AC1116CB2C00267A00B77C27 /* Extensions */,
+				AC1116DD2C04BF3E00B77C27 /* Fonts */,
 				ACB7DCB02BFBFD73005C7936 /* Assets.xcassets */,
 				ACB7DCB22BFBFD73005C7936 /* Preview Content */,
 			);
@@ -175,6 +216,7 @@
 		ACB7DCBD2BFBFF88005C7936 /* APIs */ = {
 			isa = PBXGroup;
 			children = (
+				AC7337632C053772005533CF /* BusinessInfoService.swift */,
 				ACB7DCC02BFC09C8005C7936 /* BusinessInfoAPI.swift */,
 			);
 			path = APIs;
@@ -197,6 +239,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		AC7337572C0535C4005533CF /* BusinessPageAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC73375E2C0535C4005533CF /* Build configuration list for PBXNativeTarget "BusinessPageAppTests" */;
+			buildPhases = (
+				AC7337542C0535C4005533CF /* Sources */,
+				AC7337552C0535C4005533CF /* Frameworks */,
+				AC7337562C0535C4005533CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC73375D2C0535C4005533CF /* PBXTargetDependency */,
+			);
+			name = BusinessPageAppTests;
+			productName = BusinessPageAppTests;
+			productReference = AC7337582C0535C4005533CF /* BusinessPageAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		ACB7DCA82BFBFD72005C7936 /* BusinessPageApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACB7DCB72BFBFD73005C7936 /* Build configuration list for PBXNativeTarget "BusinessPageApp" */;
@@ -224,6 +284,10 @@
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
+					AC7337572C0535C4005533CF = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = ACB7DCA82BFBFD72005C7936;
+					};
 					ACB7DCA82BFBFD72005C7936 = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -243,11 +307,19 @@
 			projectRoot = "";
 			targets = (
 				ACB7DCA82BFBFD72005C7936 /* BusinessPageApp */,
+				AC7337572C0535C4005533CF /* BusinessPageAppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AC7337562C0535C4005533CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ACB7DCA72BFBFD72005C7936 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -264,6 +336,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AC7337542C0535C4005533CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC7337622C0535E0005533CF /* BusinessInfoViewModelTests.swift in Sources */,
+				AC7337692C053867005533CF /* MockData.swift in Sources */,
+				AC7337672C0537D3005533CF /* MockBusinessInfoAPI.swift in Sources */,
+				AC73375B2C0535C4005533CF /* BusinessPageAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ACB7DCA52BFBFD72005C7936 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -271,6 +354,7 @@
 				ACB7DCC82BFC0C45005C7936 /* RequestHandler.swift in Sources */,
 				AC73374F2C051C08005533CF /* Constants.swift in Sources */,
 				AC1116CD2C00269400B77C27 /* DateExtension.swift in Sources */,
+				AC7337642C053772005533CF /* BusinessInfoService.swift in Sources */,
 				AC1116D72C015A6200B77C27 /* BusinessOpenState.swift in Sources */,
 				AC1116CF2C0027E200B77C27 /* StringExtension.swift in Sources */,
 				ACB7DCAF2BFBFD72005C7936 /* BusinessPageView.swift in Sources */,
@@ -294,7 +378,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		AC73375D2C0535C4005533CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ACB7DCA82BFBFD72005C7936 /* BusinessPageApp */;
+			targetProxy = AC73375C2C0535C4005533CF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		AC73375F2C0535C4005533CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 63262WWM7D;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ralstongoes.BusinessPageAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BusinessPageApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BusinessPageApp";
+			};
+			name = Debug;
+		};
+		AC7337602C0535C4005533CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 63262WWM7D;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ralstongoes.BusinessPageAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BusinessPageApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BusinessPageApp";
+			};
+			name = Release;
+		};
 		ACB7DCB52BFBFD73005C7936 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -477,6 +605,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AC73375E2C0535C4005533CF /* Build configuration list for PBXNativeTarget "BusinessPageAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC73375F2C0535C4005533CF /* Debug */,
+				AC7337602C0535C4005533CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		ACB7DCA42BFBFD72005C7936 /* Build configuration list for PBXProject "BusinessPageApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -12,8 +12,8 @@ final class BusinessInfoViewModel: ObservableObject {
     @Published var state: ViewState
     @Published var weeklyTimes = [String: [TimeInfo]]()
     @Published var locationText: String
-    @Published var isOpenText: String
-    @Published var isOpenNowState: BusinessOpenState
+    @Published var currentOpenText: String
+    @Published var openIndicatorState: OpenIndicatorState
     var apiService: BusinessInfoService
     
     var daysOfTheWeek: [String] {
@@ -23,8 +23,8 @@ final class BusinessInfoViewModel: ObservableObject {
     init(state: ViewState = .loading, apiService: BusinessInfoService = BusinessInfoAPI()) {
         self.state = state
         self.locationText = ""
-        self.isOpenText = ""
-        self.isOpenNowState = .closed
+        self.currentOpenText = ""
+        self.openIndicatorState = .closed
         self.apiService = apiService
     }
     
@@ -36,8 +36,8 @@ final class BusinessInfoViewModel: ObservableObject {
                 state = .loaded
                 locationText = info.locationName
                 weeklyTimes = DateTimeHelper.processDateTimes(info.hoursByDay)
-                isOpenNowState = setBusinessOpenState()
-                isOpenText = setBusinessOpenText()
+                openIndicatorState = setOpenIndicatorState()
+                currentOpenText = setCurrentOpenText()
             }
         } catch let apiError as APIError {
             print("APIError: \(apiError.localizedDescription)")
@@ -54,17 +54,17 @@ final class BusinessInfoViewModel: ObservableObject {
         }
     }
     
-    func setTimeRangeText(from start: Date, to end: Date) -> String {
+    func formatTimeRangeText(from start: Date, to end: Date, hasTrailingCharacter: Bool = false) -> String {
         guard let diff = Calendar.current.dateComponents([.hour], from: start, to: end).hour, diff < 24 else { return "Open 24 hours" }
         let startTime = start.simplifyTimeFromHMS(isUppercased: true)
         let endTime = end.simplifyTimeFromHMS(isUppercased: true)
-        return startTime + "-" + endTime
+        return startTime + "-" + endTime + (hasTrailingCharacter ? "," : "")
     }
     
-    func setBusinessOpenState() -> BusinessOpenState {
-        let currentDate = Date()
+    func setOpenIndicatorState(currentDate: Date = Date(), timeInfo: [TimeInfo]? = nil) -> OpenIndicatorState {
         let weekday = currentDate.weekday()
-        guard let timeInfo = weeklyTimes[weekday] else {
+        var timeInfo = timeInfo == nil ? weeklyTimes[weekday] : timeInfo
+        guard let timeInfo else {
             return .closed
         }
         
@@ -76,22 +76,15 @@ final class BusinessInfoViewModel: ObservableObject {
         return .closed
     }
     
-    /*
-     Text format:  
-     ”Open until {time}”
-     “Open until {time}, reopens at {next time block}”
-     “Opens again at {time}” If the next open period begins within 24h.
-     “Opens {day} {time}” if the next open period begins greater than 24 hours in the future.
-
-     */
-    func setBusinessOpenText() -> String {
+    func setCurrentOpenText(currentDate: Date = Date(), weeklyTimeInfo: [String: [TimeInfo]]? = nil) -> String {
         var res = ""
-        let currentDate = Date()
         let weekday = currentDate.weekday()
-        if let timeInfo = weeklyTimes[weekday],
+        let allWeekTimeInfo: [String: [TimeInfo]] = weeklyTimeInfo == nil ? weeklyTimes : weeklyTimeInfo ?? [:]
+        
+        if let timeInfo = allWeekTimeInfo[weekday],
            let index = timeInfo.firstIndex(where: { $0.startTime <= currentDate && currentDate < $0.endTime } ) {
             res = "Open until \(timeInfo[index].endTime.simplifyTimeFromHMS())"
-            guard index+1 < timeInfo.count else {
+            guard index + 1 < timeInfo.count else {
                 return res
             }
             res += ", reopens at \(timeInfo[index+1].endTime.simplifyTimeFromHMS())"
@@ -103,11 +96,11 @@ final class BusinessInfoViewModel: ObservableObject {
             return res
         }
         
-        res = "Opens \(weekday) \(weeklyTimes[weekday]?.first?.startTime.simplifyTimeFromHMS() ?? "")"
+        res = "Opens \(weekday) \(allWeekTimeInfo[weekday]?.first?.startTime.simplifyTimeFromHMS() ?? "")"
         var index = (startIndex + 1) % 7
         while index != startIndex {
             let nextWeekDay = weekdaySymbols[index]
-            guard let nextTimeInfo = weeklyTimes[nextWeekDay],
+            guard let nextTimeInfo = allWeekTimeInfo[nextWeekDay],
                   let nextTime = nextTimeInfo.first?.startTime,
                   let hours = Calendar.current.dateComponents([.hour], from: currentDate, to: nextTime)
                 .hour else {

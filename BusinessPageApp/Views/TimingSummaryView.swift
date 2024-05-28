@@ -15,13 +15,13 @@ struct TimingSummaryView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text(viewModel.isOpenText)
+                Text(viewModel.currentOpenText)
                     .font(.custom(PursFont.hindSiliguriRegular, size: 18.0))
                     .foregroundStyle(Color.pursGrey)
                 Image(systemName: PursImage.circleFill)
                     .resizable()
                     .foregroundStyle(
-                        viewModel.isOpenNowState.color
+                        viewModel.openIndicatorState.color
                     )
                     .frame(width: 7.0, height: 7.0)
                 Spacer()

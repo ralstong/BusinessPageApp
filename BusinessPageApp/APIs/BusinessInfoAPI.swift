@@ -7,10 +7,6 @@
 
 import Foundation
 
-protocol BusinessInfoService {
-    func fetchLocationData() async throws -> BusinessInfo
-}
-
 class BusinessInfoAPI: BusinessInfoService {
     
     static let locationURL = "https://purs-demo-bucket-test.s3.us-west-2.amazonaws.com/location.json"

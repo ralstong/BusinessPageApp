@@ -34,7 +34,7 @@ struct BusinessPageView: View {
                                                         endPoint: .bottom))
                     
                     CollapsibleTimingView(viewModel: viewModel)
-                        .background(Color(hex: "D9D9D9").opacity(0.6))
+                        .background(.ultraThinMaterial)
                         .clipShape(RoundedRectangle(cornerRadius: 8.0))
                         .shadow(color: .black.opacity(0.25), radius: 10.2, x: 0, y: 4.0)
                         .padding(.horizontal, 23.0)

@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum BusinessOpenState {
+enum OpenIndicatorState {
     case open
     case closing
     case closed

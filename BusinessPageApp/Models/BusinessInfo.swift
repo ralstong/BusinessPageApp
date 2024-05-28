@@ -22,11 +22,7 @@ extension BusinessInfo: Decodable {
     init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         locationName = try container.decodeIfPresent(String.self, forKey: .locationName) ?? ""
-        
-        guard let allHoursInfo = try? container.decode([HoursInfo].self, forKey: .hours) else {
-            hoursByDay = [:]
-            return
-        }
+        let allHoursInfo: [HoursInfo] = try container.decodeIfPresent([HoursInfo].self, forKey: .hours) ?? []
         hoursByDay = BusinessInfo.configureHoursByDay(from: allHoursInfo)
     }
     

@@ -13,16 +13,16 @@ struct DateTimeHelper {
     
     /// Processes the weekday - TimeInfo array dictionary to simplify and sort time ranges
     /// - Parameters:
-    ///   - info: Dictionary containing key as weekday String and value as TimeInfo
-    /// - Returns: The simplified dictionary containing key as weekday String and value as TimeInfo sorted by start time
+    ///   - info: Dictionary containing key as weekday string and value as TimeInfo
+    /// - Returns: The simplified dictionary containing key as weekday string and value as TimeInfo sorted by start time
     static func processDateTimes(_ info: [String: [TimeInfo]]) -> [String: [TimeInfo]] {
         return combineOverlappingTimes(sortTimes(info))
     }
     
     /// Sorts TimeInfo values for each weekday by increasing start time
     /// - Parameters:
-    ///   - info: Dictionary containing key as weekday String and value as TimeInfo
-    /// - Returns: The dictionary containing key as weekday String and value as TimeInfo sorted by start time
+    ///   - info: Dictionary containing key as weekday string and value as TimeInfo
+    /// - Returns: The dictionary containing key as weekday string and value as TimeInfo sorted by start time
     static func sortTimes(_ info: [String: [TimeInfo]]) -> [String: [TimeInfo]] {
         var info = info
         
@@ -38,8 +38,8 @@ struct DateTimeHelper {
     
     /// Combines overlapping or continuous times where possible across weekdays and within the day
     /// - Parameters:
-    ///   - sortedInfo: Dictionary containing key as weekday String and value as TimeInfo sorted by start time
-    /// - Returns: The simplified dictionary containing key as weekday String and value as TimeInfo
+    ///   - sortedInfo: Dictionary containing key as weekday string and value as TimeInfo sorted by start time
+    /// - Returns: The simplified dictionary containing key as weekday string and value as TimeInfo
     static func combineOverlappingTimes(_ sortedInfo: [String: [TimeInfo]]) -> [String: [TimeInfo]] {
         var info = sortedInfo
         var prevTime: TimeInfo?

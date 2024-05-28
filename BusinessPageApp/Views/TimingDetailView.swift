@@ -17,7 +17,7 @@ struct TimingDetailView: View {
             if let times = viewModel.weeklyTimes[key] {
                 HStack(alignment: .top) {
                     Text(key)
-                        .font(viewModel.isOpenNowState != .closed && Date().weekday() == key ?
+                        .font(viewModel.openIndicatorState != .closed && Date().weekday() == key ?
                             .custom(PursFont.hindSiliguriBold, size: 18.0) :
                             .custom(PursFont.hindSiliguriRegular, size: 18.0)
                         )
@@ -26,10 +26,11 @@ struct TimingDetailView: View {
                     VStack(alignment: .trailing) {
                         ForEach(0..<times.count, id: \.self) { i in
                             let t = times[i]
-                            Text(viewModel.setTimeRangeText(from: t.startTime, to: t.endTime)
-                                 + (times.count > 1 && i != times.count - 1 ? "," : "")
+                            Text(viewModel.formatTimeRangeText(from: t.startTime,
+                                                               to: t.endTime,
+                                                               hasTrailingCharacter: times.count > 1 && i != times.count - 1)
                             )
-                            .font(viewModel.isOpenNowState != .closed && Date().weekday() == key ?
+                            .font(viewModel.openIndicatorState != .closed && Date().weekday() == key ?
                                 .custom(PursFont.hindSiliguriBold, size: 18.0) :
                                 .custom(PursFont.hindSiliguriRegular, size: 18.0)
                             )
